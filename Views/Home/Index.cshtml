@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Clientes</h1>
+    <ul>
+        @foreach (var cliente in ViewBag.clientes)
+        {
+            <li>
+                <div>Nome: @cliente.Nome</div>
+                <div>CPF: @cliente.CPF</div>
+                <div>Email: @cliente.Email</div>
+                <ul>
+                    @foreach (var conta in cliente.Contas)
+                    {
+                        <li>
+                            <div>Numero: @conta.Numero</div>
+                            <div>Tipo: @conta.Tipo</div>
+                            <div>Agencia: @conta.Agencia</div>
+                            <div>Saldo: @conta.Saldo</div>
+                        </li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+</div>
